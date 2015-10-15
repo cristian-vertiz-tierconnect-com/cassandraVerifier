@@ -45,8 +45,8 @@ public class CassandraVerifier {
             thingTimeCount.put(thing_id,temp);
             countFVH2++;
 
-            if(countFVH2 % 100000 == 0){
-                System.out.print("\rAnalysing cassandra field_value_history2 " + car[(countFVH2/100000)%4]);
+            if(countFVH2 % 10000 == 0){
+                System.out.print("\rAnalysing cassandra field_value_history2 " + car[(countFVH2/10000)%4]);
             }
 
         }
@@ -60,8 +60,8 @@ public class CassandraVerifier {
             if(!thingFieldMap.containsKey(row.getLong("field_id")))
                 fvh2Orphan += 1;
             countFVH++;
-            if(countFVH % 100000 == 0){
-                System.out.print("\rAnalysing cassandra field_value_history " + car[(countFVH/100000)%4]);
+            if(countFVH % 10000 == 0){
+                System.out.print("\rAnalysing cassandra field_value_history " + car[(countFVH/10000)%4]);
             }
         }
 
@@ -82,8 +82,8 @@ public class CassandraVerifier {
             if(!thingFieldMap.containsKey(row.getLong("field_id")))
                 fvOrphan += 1;
             countFV++;
-            if(countFV % 100000 == 0){
-                System.out.print("\rAnalysing cassandra field_value " + car[(countFV/100000)%4]);
+            if(countFV % 10000 == 0){
+                System.out.print("\rAnalysing cassandra field_value " + car[(countFV/10000)%4]);
             }
         }
 
