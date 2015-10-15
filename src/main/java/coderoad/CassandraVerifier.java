@@ -106,8 +106,8 @@ public class CassandraVerifier {
         }
 
         System.out.println("================================ Summary ================================");
-        System.out.println("Total blinks --------------------------------------> " + totalBLinks);
-        System.out.println("Things --------------------------------------------> " + thingTimeCount.entrySet().size());
+        System.out.println("   Total blinks --------------------------------------> " + totalBLinks);
+        System.out.println("   Things --------------------------------------------> " + thingTimeCount.entrySet().size());
         System.out.println("(1)Total cassandra rows in field_value_history2 ------> " + countFVH2);
         System.out.println("(2)Total cassandra orphans in field_value_history2 ---> " + fvh2Orphan);
         System.out.println("(3)Total cassandra rows in field_value_history -------> " + countFVH);
@@ -118,15 +118,15 @@ public class CassandraVerifier {
         System.out.println("\n***NOTE : Make sure (1)+(2)=(3) and (4)+(5)=(6)");
 
         sb.append("\n================================ Summary ================================");
-        sb.append("\nTotal blinks --------------------------------------> " + totalBLinks);
-        sb.append("\nThings --------------------------------------------> " + thingTimeCount.entrySet().size());
-        sb.append("\nTotal cassandra rows in field_value_history2 ------> " + countFVH2);
-        sb.append("\nTotal cassandra orphans in field_value_history2 ---> " + fvh2Orphan);
-        sb.append("\nTotal cassandra rows in field_value_history -------> " + countFVH);
+        sb.append("\n   Total blinks --------------------------------------> " + totalBLinks);
+        sb.append("\n   Things --------------------------------------------> " + thingTimeCount.entrySet().size());
+        sb.append("\n(1)Total cassandra rows in field_value_history2 ------> " + countFVH2);
+        sb.append("\n(2)Total cassandra orphans in field_value_history2 ---> " + fvh2Orphan);
+        sb.append("\n(3)Total cassandra rows in field_value_history -------> " + countFVH);
         sb.append("\n");
-        sb.append("Total cassandra rows in field_type ----------------> " + countFT);
-        sb.append("Total cassandra orphans in field_value ------------> " + fvOrphan);
-        sb.append("Total cassandra rows in field_value ---------------> " + countFV);
+        sb.append("\n(4)Total cassandra rows in field_type ----------------> " + countFT);
+        sb.append("\n(5)Total cassandra orphans in field_value ------------> " + fvOrphan);
+        sb.append("\n(6)Total cassandra rows in field_value ---------------> " + countFV);
         sb.append("\n\n***NOTE : Make sure (1)+(2)=(3) and (4)+(5)=(6)");
 
         String fileName = "results_" + (new SimpleDateFormat("YYYYMMddhhmmss").format(new Date())) + ".txt";
