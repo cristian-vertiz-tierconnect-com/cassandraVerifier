@@ -51,7 +51,7 @@ public class CassandraVerifier {
 
         }
 
-        System.out.println("Analysing cassandra field_value_history2  [OK]");
+        System.out.println("\rAnalysing cassandra field_value_history2  [OK]");
 
 
         //field_value_history
@@ -72,7 +72,7 @@ public class CassandraVerifier {
         PreparedStatement selectFT = CassandraUtils.getSession().prepare("SELECT count(*) as count FROM field_type limit 1000000000");
         Row rowFT = CassandraUtils.getSession().execute(new BoundStatement(selectFT)).all().get(0);
         countFT = Integer.parseInt(rowFT.getLong("count")+"");
-        System.out.println("\rAnalysing cassandra field_value_history [OK]");
+        System.out.println("\rAnalysing cassandra field_type [OK]");
 
 
 
