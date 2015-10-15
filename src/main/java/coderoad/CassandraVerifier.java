@@ -176,7 +176,7 @@ public class CassandraVerifier {
 
     public static Connection initMysqlJDBCDrivers() throws ClassNotFoundException, SQLException, IllegalAccessException, InstantiationException {
 
-        String url = System.getProperty("connection.url");
+        String url = System.getProperty("connection.url." + database);
         String userName = System.getProperty("connection.username." + database);
         String password = System.getProperty("connection.password." + database);
 
@@ -189,9 +189,10 @@ public class CassandraVerifier {
     }
 
     public static void setDBPrperties(){
-        System.getProperties().put("connection.url", "jdbc:mysql://localhost:3306/riot_main");
+        System.getProperties().put("connection.url.mysql", "jdbc:mysql://localhost:3306/riot_main");
         System.getProperties().put("connection.username.mysql", "root");
         System.getProperties().put("connection.password.mysql", "control123!");
+        System.getProperties().put("connection.url.mssql", "jdbc:jtds:sqlserver://localhost:1433/riot_main");
         System.getProperties().put("connection.username.mssql", "sa");
         System.getProperties().put("connection.password.mssql", "control123!");
 
