@@ -74,7 +74,7 @@ public class CassandraVerifier {
 
         for (Row row : CassandraUtils.getSession().execute(new BoundStatement(selectFT)) ){
             countFT++;
-            if(countFVH % 10000 == 0){
+            if(countFT % 10000 == 0){
                 System.out.print("\rAnalysing cassandra field_type " + car[(countFT/10000)%4]);
             }
         }
