@@ -69,9 +69,16 @@ public class CassandraVerifier {
 
 
         //field_type
-        PreparedStatement selectFT = CassandraUtils.getSession().prepare("SELECT count(*) as count FROM field_type limit 1000000000");
-        Row rowFT = CassandraUtils.getSession().execute(new BoundStatement(selectFT)).all().get(0);
-        countFT = Integer.parseInt(rowFT.getLong("count")+"");
+        PreparedStatement selectFT = CassandraUtils.getSession().prepare("SELECT field_type_id FROM field_type limit 1000000000");
+//        Row rowFT = CassandraUtils.getSession().execute(new BoundStatement(selectFT)).all().get(0);
+
+        for (Row row : CassandraUtils.getSession().execute(new BoundStatement(selectFT)) ){
+            countFT++;
+            if(countFVH % 10000 == 0){
+                System.out.print("\rAnalysing cassandra field_type " + car[(countFT/10000)%4]);
+            }
+        }
+//        countFT = Integer.parseInt(rowFT.getLong("count")+"");
         System.out.println("\rAnalysing cassandra field_type [OK]");
 
 
